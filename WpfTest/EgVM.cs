@@ -54,6 +54,7 @@ namespace WpfTest
         public void ExecuteCommand(object para)
         {
             Console.WriteLine("Command executed");
+            Model.Name = "new name";
         }
     }
 
