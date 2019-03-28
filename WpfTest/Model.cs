@@ -15,7 +15,7 @@ namespace WpfTest
         public string Name
         {
             get { return name; }
-            set { name = value; OnPropertyChanged("name_changed"); }
+            set { name = value; OnPropertyChanged(); }
         }
 
         private string _address;
@@ -23,8 +23,8 @@ namespace WpfTest
         public string Address
         {
             get { return _address; }
-            set { _address = value; OnPropertyChanged("address_changed"); }
-        }        
+            set { _address = value; OnPropertyChanged(); }
+        }
 
         public string Error
         {

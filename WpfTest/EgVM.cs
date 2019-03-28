@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Runtime.CompilerServices;
 
 namespace WpfTest
 {
@@ -14,7 +15,7 @@ namespace WpfTest
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string pName)
+        public void OnPropertyChanged([CallerMemberName]string pName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(pName));
         }
@@ -27,7 +28,7 @@ namespace WpfTest
         public Model Model
         {
             get { return _model; }
-            set { _model = value; OnPropertyChanged("model_changed"); }
+            set { _model = value; OnPropertyChanged(); }
         }
 
         private ICommand _cmd;
